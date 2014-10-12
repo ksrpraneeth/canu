@@ -1,22 +1,23 @@
 package com.example.canusurf;
 
-import android.os.Bundle;
+import com.google.example.games.basegameutils.BaseGameActivity;
+
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseGameActivity {
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+	public void onSignInFailed() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
+	public void onSignInSucceeded() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
