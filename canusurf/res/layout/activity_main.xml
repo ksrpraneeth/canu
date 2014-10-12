@@ -18,10 +18,31 @@
     <!-- sign-out button -->
 
     <Button
+        android:id="@+id/showachievement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/getachievement"
+        android:layout_marginTop="69dp"
+        android:text="Show Achivement" />
+
+    <Button
+        android:id="@+id/getachievement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/showachievement"
+        android:layout_below="@+id/sign_in_button"
+        android:layout_marginTop="141dp"
+        android:text="Get Achivement" />
+
+    <Button
         android:id="@+id/sign_out_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/getachievement"
+        android:layout_alignLeft="@+id/sign_in_button"
+        android:layout_marginBottom="19dp"
         android:text="Sign Out"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
 </RelativeLayout>
