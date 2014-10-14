@@ -17,6 +17,9 @@ public class MainActivity extends BaseGameActivity implements
 	Button SignOut;
 	Button GetAchievement;
 	Button ShowAchievement;
+	Button Submitscore;
+	Button leaderboard;
+	int i = 1;
 
 	@Override
 	protected void onCreate(Bundle b) {
@@ -27,11 +30,15 @@ public class MainActivity extends BaseGameActivity implements
 		SignIn = (SignInButton) findViewById(R.id.sign_in_button);
 		SignOut = (Button) findViewById(R.id.sign_out_button);
 		GetAchievement = (Button) findViewById(R.id.getachievement);
+		Submitscore = (Button) findViewById(R.id.submitscore);
 		ShowAchievement = (Button) findViewById(R.id.showachievement);
+		leaderboard = (Button) findViewById(R.id.showleaderboard);
 		SignIn.setOnClickListener(this);
 		SignOut.setOnClickListener(this);
 		GetAchievement.setOnClickListener(this);
 		ShowAchievement.setOnClickListener(this);
+		Submitscore.setOnClickListener(this);
+		leaderboard.setOnClickListener(this);
 	}
 
 	@Override
@@ -64,6 +71,15 @@ public class MainActivity extends BaseGameActivity implements
 		case R.id.showachievement:
 			startActivityForResult(
 					Games.Achievements.getAchievementsIntent(getApiClient()), 1);
+			break;
+		case R.id.submitscore:
+			i++;
+			Games.Leaderboards.submitScore(getApiClient(),
+					getString(R.string.top_rankings), 10 + i);
+			break;
+		case R.id.showleaderboard:
+			startActivityForResult(Games.Leaderboards.getLeaderboardIntent(
+					getApiClient(), getString(R.string.top_rankings)), 2);
 			break;
 		default:
 			break;
